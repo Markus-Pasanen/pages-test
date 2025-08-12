@@ -201,8 +201,10 @@ section:last-child {
     overflow: hidden;
     transition: transform 0.3s;
     display: flex;
-    flex-direction: column; /* Ensure content stacks vertically */
-    justify-content: space-between; /* Push content to top and bottom */
+    flex-direction: column;
+    /* Ensure content stacks vertically */
+    justify-content: space-between;
+    /* Push content to top and bottom */
 }
 
 .project-card:hover {
@@ -219,9 +221,12 @@ section:last-child {
 .project-content {
     padding: 20px;
     display: flex;
-    flex-direction: column; /* Stack content vertically */
-    position: relative; /* Enable positioning for the button */
-    height: 100%; /* Ensure the content fills the card */
+    flex-direction: column;
+    /* Stack content vertically */
+    position: relative;
+    /* Enable positioning for the button */
+    height: 100%;
+    /* Ensure the content fills the card */
 }
 
 .project-title {
@@ -249,9 +254,12 @@ section:last-child {
 }
 
 .project-links {
-    position: absolute; /* Position the button at the bottom */
-    bottom: 20px; /* Add spacing from the bottom */
-    left: 20px; /* Align with content padding */
+    position: absolute;
+    /* Position the button at the bottom */
+    bottom: 20px;
+    /* Add spacing from the bottom */
+    left: 20px;
+    /* Align with content padding */
     display: flex;
     gap: 15px;
 }
@@ -298,7 +306,58 @@ footer {
     color: var(--accent);
 }
 
-/* Responsive */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(110%);
+}
+
+.mobile-nav.active {
+    display: flex;
+    transform: translateX(0);
+}
+
+.mobile-nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-nav li {
+    margin: 20px 0;
+}
+
+.mobile-nav a {
+    color: var(--text);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.mobile-nav a:hover {
+    color: var(--accent);
+}
+
+/* Burger menu button */
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text);
+    cursor: pointer;
+    z-index: 101;
+}
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
@@ -314,6 +373,35 @@ footer {
 
     nav ul {
         gap: 15px;
+        display: none
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .mobile-nav ul {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background-color: var(--primary);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 50% 25%;
+        width: 100vw;
+    }
+
+    .mobile-nav li {
+        margin: 2rem 0;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .desktop-nav {
+        display: none;
     }
 }
 

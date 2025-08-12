@@ -36,3 +36,24 @@ projectCards.forEach(card => {
     card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(card);
 });
+
+// Burger menu toggle
+const burgerMenu = document.getElementById('burger-menu');
+const mobileNav = document.getElementById('mobile-nav');
+
+burgerMenu.addEventListener('click', () => {
+    mobileNav.classList.toggle('active');
+    const icon = burgerMenu.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+});
+
+// Close mobile nav on link click
+document.querySelectorAll('.mobile-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+        const icon = burgerMenu.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+    });
+});
