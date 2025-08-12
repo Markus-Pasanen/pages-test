@@ -200,6 +200,9 @@ section:last-child {
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s;
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    justify-content: space-between; /* Push content to top and bottom */
 }
 
 .project-card:hover {
@@ -215,6 +218,10 @@ section:last-child {
 
 .project-content {
     padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    position: relative; /* Enable positioning for the button */
+    height: 100%; /* Ensure the content fills the card */
 }
 
 .project-title {
@@ -242,6 +249,9 @@ section:last-child {
 }
 
 .project-links {
+    position: absolute; /* Position the button at the bottom */
+    bottom: 20px; /* Add spacing from the bottom */
+    left: 20px; /* Align with content padding */
     display: flex;
     gap: 15px;
 }
